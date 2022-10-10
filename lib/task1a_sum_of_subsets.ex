@@ -128,6 +128,11 @@ defmodule Task1aSumOfSubsets do
              }
          """
          def sum_of_all(array_of_digits,matrix_of_sum) do
+              valid_sum(matrix_of_sum)
 
+              Enum.map(matrix_of_sum,fn val ->
+                     sum_of_all(array_of_digits,val)
+
+              end)
          end
        end
